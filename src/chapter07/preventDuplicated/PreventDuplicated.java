@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * 注意：Hook 线程对于类似 kill -9 这类强制杀死进程的方法无效
  */
 public class PreventDuplicated {
-    private static final String LOCK_PATH = "./locks";
+    private static final String LOCK_PATH = "/Users/duke/locks/";
 
     private static final String LOCK_FILE = ".lock";
 

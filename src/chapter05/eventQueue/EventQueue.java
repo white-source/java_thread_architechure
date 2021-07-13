@@ -30,10 +30,10 @@ public class EventQueue {
     }
 
     //向队列添加数据
-    public void offer(Event event){
-        synchronized (eventQueue){
+    public void offer(Event event) {
+        synchronized (eventQueue) {
             //超过容量，则阻塞
-            while (eventQueue.size()>=max){
+            while (eventQueue.size() >= max) {
                 try {
                     console(" the queue is full.");
                     eventQueue.wait();
@@ -49,10 +49,10 @@ public class EventQueue {
     }
 
     //获取队列数据
-    public Event take(){
-        synchronized (eventQueue){
+    public Event take() {
+        synchronized (eventQueue) {
             //队列空，阻塞
-            while (eventQueue.isEmpty()){
+            while (eventQueue.isEmpty()) {
                 try {
                     console(" the queue is empty.");
                     eventQueue.wait();
@@ -62,14 +62,14 @@ public class EventQueue {
             }
 
             //队列有数据，则从队列头获取数据，并唤醒其他被阻塞的线程
-            Event event=eventQueue.removeFirst();
+            Event event = eventQueue.removeFirst();
             eventQueue.notifyAll();
-            console(" the queue "+event+" is handled.");
+            console(" the queue " + event + " is handled.");
             return event;
         }
     }
 
-    private void console(String message){
-        System.out.printf("%s:%s\n",currentThread().getName(),message);
+    private void console(String message) {
+        System.out.printf("%s:%s\n", currentThread().getName(), message);
     }
 }

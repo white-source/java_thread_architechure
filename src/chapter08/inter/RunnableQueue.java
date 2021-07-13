@@ -1,4 +1,4 @@
-package chapter08;
+package chapter08.inter;
 
 /**
  * 任务队列，主要用于缓存提交到线程池中的任务

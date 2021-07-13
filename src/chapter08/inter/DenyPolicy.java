@@ -1,4 +1,6 @@
-package chapter08;
+package chapter08.inter;
+
+import chapter08.RunnableDenyException;
 
 /**
  * DenyPolicy 主要用于当queue中的Runnable达到上限时，决定采用何种策略通知提交者，
@@ -8,7 +10,7 @@ package chapter08;
 public interface DenyPolicy {
 
     //拒绝接口
-    void reject(Runnable runnable,ThreadPool threadPool);
+    void reject(Runnable runnable, ThreadPool threadPool);
 
     //该拒绝策略会直接将任务丢弃
     class DiscardDenyPolicy implements DenyPolicy{

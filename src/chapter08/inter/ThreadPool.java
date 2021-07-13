@@ -1,4 +1,4 @@
-package chapter08;
+package chapter08.inter;
 
 /**
  * ThreadPool 接口定义一个线程池应该具有的基本操作和方法

@@ -1,5 +1,7 @@
 package chapter08;
 
+import chapter08.inter.RunnableQueue;
+
 /**
  * InternalTask 是 Runnable 的一个实现，主要用于线程池的内部，
  * 该类会使用到 RunnableQueue,然后不断得从 queue 中取出 Runnable,
